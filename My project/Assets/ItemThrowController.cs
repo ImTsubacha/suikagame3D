@@ -28,7 +28,7 @@ public class ItemThrowcontroller : MonoBehaviour
         {
             pos.x += speed;
         }
-        this.transform.position=pos;
+        this.transform.position = pos;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             var random = Random.Range(0, itemListManager.ItemList.Count-6);
