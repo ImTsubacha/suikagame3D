@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public int DropNum;//—‚¿‚½‡”ÔA2‚Â¶¬‚ğ–h‚®
+    public int ThrowNum;//—‚¿‚½‡”ÔA2‚Â¶¬‚ğ–h‚®
     public int Rank = 0;
     ItemListManager itemList;
     // Start is called before the first frame update
@@ -21,13 +21,15 @@ public class ItemManager : MonoBehaviour
         {
             var item = collision.gameObject.GetComponent<ItemManager>();
             if (item.Rank != Rank) return;
-            if (DropNum < item.DropNum)
+            if (ThrowNum < item.ThrowNum)
             {
                 var pos = collision.contacts[0].point;
                 var next_item = Instantiate(itemList.ItemList[Rank + 1],pos,Quaternion.identity);
-                itemList.DropNum++;
+                var num = itemList.itemThrowController.ThrowNum++;
 
-                next_item.GetComponent<ItemManager>().DropNum = itemList.DropNum;
+                next_item.GetComponent<ItemManager>().ThrowNum = num;
+                Destroy(item.gameObject);
+                Destroy(this.gameObject);
             }
 
         }
