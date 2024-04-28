@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ItemListManager : MonoBehaviour
 {
-    public int DropNum;
+    public int ThrowNum;
+    public ItemThrowcontroller itemThrowController;
     //アイテムのランクを管理
     public List<GameObject> ItemList = new List<GameObject>();
 
