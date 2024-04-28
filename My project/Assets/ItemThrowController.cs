@@ -28,12 +28,15 @@ public class ItemThrowcontroller : MonoBehaviour
         {
             pos.x += speed;
         }
+
         this.transform.position = pos;
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             var random = Random.Range(0, itemListManager.ItemList.Count-6);
-            Instantiate(itemListManager.ItemList[random], this.transform.position, Quaternion.identity);
-            itemListManager.GetComponent<ItemManager>().ThrowNum = ThrowNum;
+            var item = Instantiate
+                (itemListManager.ItemList[random], this.transform.position, Quaternion.identity);
+            item.GetComponent<ItemManager>().ThrowNum = ThrowNum;
             ThrowNum++;
         }
     }
