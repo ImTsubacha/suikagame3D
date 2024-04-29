@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         this.mainCamera = Camera.main.gameObject;
-        this.fieldObject = GameObject.Find("Cube");//何を対象に回すか
+        this.fieldObject = GameObject.Find("Cube");//何を対象に回すかオブジェクト名を書く
     }
     void Update()
     {

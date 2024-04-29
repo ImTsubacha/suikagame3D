@@ -21,7 +21,7 @@ public class ItemThrowcontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* //プレイヤーを別で操作する場合はこれを使う。カメラ操作をする場合はコメントアウトのままでよい。
+        /* //プレイヤーを別で操作する場合はこれを使う。カメラ操作をする場合はコメントアウトのままでよい
         var pos = this.transform.position;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
