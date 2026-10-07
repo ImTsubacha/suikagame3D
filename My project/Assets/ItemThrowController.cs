@@ -35,7 +35,7 @@ public class ItemThrowcontroller : MonoBehaviour
         this.transform.position = pos;
         */
         //«‰Ÿ‚µ‚½‚Æ‚«ƒtƒ‹[ƒc¶¬
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             var random = Random.Range(0, itemListManager.ItemList.Count-6);
             var item = Instantiate(itemListManager.ItemList[random], this.transform.position, Quaternion.identity);
