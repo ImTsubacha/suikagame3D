@@ -6,6 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     public int ThrowNum=0;//—‚¿‚½‡”ÔA2‚Â¶¬‚ğ–h‚®
     public int Rank = 0;
+    public int Score = 0;
     ItemListManager itemListManager;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,11 @@ public class ItemManager : MonoBehaviour
             var item = collision.gameObject.GetComponent<ItemManager>();
             
             if (item.Rank != Rank) return;
+
+            if (item.Rank == 11 && Rank == 11)
+            {
+                Destroy(collision.gameObject);
+            }
 
             if (ThrowNum < item.ThrowNum)
             {
